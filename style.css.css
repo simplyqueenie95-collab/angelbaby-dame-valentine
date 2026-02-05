@@ -1,0 +1,159 @@
+body {
+  background: radial-gradient(circle, #004d40, #002d25);
+  font-family: "Poppins", sans-serif;
+  color: #b2ff59;
+  text-align: center;
+  margin: 0;
+  overflow-x: hidden;
+  padding-bottom: 60px;
+}
+
+.container {
+  margin-top: 10vh;
+  padding: 20px;
+}
+
+.title {
+  font-size: 2.5em;
+  color: #aeea00;
+}
+
+.subtitle {
+  font-size: 1.1em;
+  color: #b9f6ca;
+  margin-bottom: 20px;
+}
+
+img.main-image, img.final-image {
+  width: 60%;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(178, 255, 89, 0.5);
+  margin: 25px 0;
+  transition: transform 0.4s ease;
+}
+
+img.main-image:hover {
+  transform: scale(1.05);
+}
+
+button, select {
+  margin: 12px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  background-color: #00c853;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #69f0ae;
+  color: #004d40;
+  transform: scale(1.1);
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  font-weight: 600;
+  color: #ccff90;
+}
+
+select {
+  background-color: #003d33;
+  color: #b9f6ca;
+  border: 2px solid #00c853;
+  border-radius: 10px;
+  width: 220px;
+  padding: 5px;
+}
+
+.fade-in {
+  animation: fadeIn 1.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* Floating hearts animation */
+#hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  bottom: -50px;
+  width: 15px;
+  height: 15px;
+  background: #b2ff59;
+  opacity: 0.6;
+  transform: rotate(45deg);
+  animation: float 6s ease-in infinite;
+}
+
+.heart::before, .heart::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #b2ff59;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -7px;
+  left: 0;
+}
+
+.heart::after {
+  left: 7px;
+  top: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Now playing popup */
+#nowPlaying {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: rgba(0, 77, 64, 0.8);
+  color: #aeea00;
+  font-size: 0.95em;
+  padding: 10px 18px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(178, 255, 89, 0.4);
+  animation: slideUp 1.2s ease-in-out;
+  z-index: 100;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
